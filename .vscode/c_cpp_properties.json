@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/inc",
+                "~/googletest/googletest/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/8/include",
+                "/usr/local/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include",
+                "/usr/include/c++/8/",
+                "/usr/include/x86_64-linux-gnu/c++/8"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

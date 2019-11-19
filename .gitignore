@@ -1,0 +1,4 @@
+*.o
+*.gcno
+*.a
+my_test
