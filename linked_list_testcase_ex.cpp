@@ -100,13 +100,16 @@ TEST(LinkedList, DisplayItemNullItem)
 
 TEST(LinkedList, DisplayItemNullString)
 {
+    char buffer[100];
+
     linked_list ll = {0};
 
     int err = display_item(&ll);
 
     EXPECT_EQ(err, 0);
 
-    EXPECT_OUTPUT(display_item(&ll), NULL_REPLACE_STRING);
+    sprintf(buffer, "%s\n", NULL_REPLACE_STRING);
+    EXPECT_OUTPUT(display_item(&ll), buffer);
 }
 
 TEST(LinkedList, DisplayItemOk)
@@ -235,6 +238,22 @@ TEST(LinkedList, DeleteOutOfIndex)
 }
 
 TEST(LinkedList, DeleteOk)
+{
+    linked_list ll = {0};
+    linked_list *ll_1 = (linked_list *)malloc(sizeof(linked_list));
+    ll.next = ll_1;
+    ll_1->index = 1;
+
+    int err = delete_from_list(&ll, 1);
+
+    EXPECT_EQ(err, 0);
+
+    EXPECT_EQ(ll.data, null_text);
+    EXPECT_EQ(ll.index, 0);
+    EXPECT_EQ(ll.next, null_ll);
+}
+
+TEST(LinkedList, DeleteMany)
 {
     linked_list ll = {0};
     linked_list *ll_1 = (linked_list *)malloc(sizeof(linked_list));
